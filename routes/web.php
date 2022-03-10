@@ -43,4 +43,6 @@ Route::get('/user/{id}', function (
     ];
     $res = $request->all();
     return view('info', compact('id', 'users', 'res'));
+
+    // commit lần 2
 });
