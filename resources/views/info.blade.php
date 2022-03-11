@@ -13,9 +13,20 @@
 
     <div class="container">
         <div class="alert alert-info m3 text-center" role="alert">Trần Tiến - PH12974</div>
-        <div class="alert alert-success text-center m-3" role="alert">
-            ID = {{$id}}, Name = {{$res['name']}}, Class = {{$res['class']}}, Info = {{$res['info']}}
-          </div>
+        @if (isset($id))
+            <div class="alert alert-success text-center m-3" role="alert">
+                ID = {{$id}}, 
+                @if(isset($res['name'])) 
+                    Name = {{$res['name']}}, 
+                @endif 
+                @if (isset($res['class']))
+                    Class = {{$res['class']}},
+                @endif
+                @if (isset($res['info']))
+                    Info = {{$res['info']}}
+                @endif
+            </div>
+        @endif
         <h2 class="text-center m-5">Bảng dữ liệu</h2>
         <table class="table table-hover">
             <thead>

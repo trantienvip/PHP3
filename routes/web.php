@@ -19,9 +19,9 @@ Route::get('/', [HomeController::class, 'index']);
 
 // /user/1?name=tuannda3&class=we16201&info=title
 
-Route::get('/user/{id}', function (
+Route::get('/user/{id?}', function (
     Request $request,
-    $id,
+    $id = 1,
 ) {
     $users = [
         [
